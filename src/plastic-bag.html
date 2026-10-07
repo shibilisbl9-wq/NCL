@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>NCL Plastic bag 350x450</title>
+<link rel="stylesheet" href="shared/common.css"><style>
+.bag{background-color:var(--orange);color:#fff}
+.bag .bgpat{position:absolute;left:calc(-1*var(--b));top:calc(-1*var(--b));right:calc(-1*var(--b));bottom:calc(-1*var(--b))}
+.front .logo{left:50%;top:168mm;width:210mm;transform:translateX(-50%)}
+.front .ar-line{position:absolute;left:0;right:0;top:318mm;text-align:center;font-weight:800;font-size:13.5mm;line-height:1.4;color:#fff;letter-spacing:0}
+.front .en-line{position:absolute;left:0;right:0;top:344mm;text-align:center;font-weight:600;font-size:5.2mm;letter-spacing:.42em;text-transform:uppercase;color:#fff;opacity:.95}
+.front .rule{position:absolute;left:50%;top:306mm;width:26mm;height:1.1mm;background:#fff;transform:translateX(-50%)}
+.back .sym{left:50%;top:165mm;width:62mm;transform:translateX(-50%)}
+.back .web{position:absolute;left:0;right:0;top:352mm;text-align:center;font-size:7mm;font-weight:600;letter-spacing:.12em;color:#fff}
+.back .tel{position:absolute;left:0;right:0;top:364mm;text-align:center;font-size:5.4mm;font-weight:500;letter-spacing:.1em;color:#fff;opacity:.95}
+.back .addr{position:absolute;left:0;right:0;top:375mm;text-align:center;font-size:4.4mm;font-weight:400;letter-spacing:.06em;color:#fff;opacity:.9}
+.back .ar-addr{position:absolute;left:0;right:0;top:383mm;text-align:center;font-size:4.4mm;font-weight:600;color:#fff;opacity:.95}
+/* production guides */
+.g{display:none} body.guides .g{display:block}
+.g.handle{position:absolute;left:50%;top:48mm;width:150mm;height:32mm;transform:translateX(-50%);border:.4mm dashed #0F1E2A;border-radius:16mm;background:rgba(255,255,255,.25)}
+.g.hem{position:absolute;left:0;right:0;top:0;height:30mm;border-bottom:.4mm dashed #0F1E2A;background:rgba(15,30,42,.08)}
+.g.safe{position:absolute;left:15mm;right:15mm;top:90mm;bottom:15mm;border:.3mm dashed #fff}
+.g .t{position:absolute;font:600 3.2mm Montserrat;color:#0F1E2A;letter-spacing:.04em}
+</style></head><body>
+<div class="sheet bag front" data-w="350" data-h="450">
+  <div class="bgpat pat-orange-dark"></div>
+  <img class="abs logo" src="../brand/logos/vector/ncl-stacked-mono-white.svg" alt="">
+  <div class="rule"></div>
+  <div class="ar-line ar">مدينة جديدة. إنارة جديدة. منظور جديد.</div>
+  <div class="g hem"><span class="t" style="left:6mm;top:10mm">TOP HEM / SEAL ZONE – NO ARTWORK (30 mm)</span></div>
+  <div class="g handle"><span class="t" style="left:0;right:0;top:12mm;text-align:center">DIE-CUT HANDLE 150 x 32 mm</span></div>
+  <div class="g safe"></div>
+</div>
+<div class="sheet bag back" data-w="350" data-h="450">
+  <div class="bgpat pat-orange-dark"></div>
+  <img class="abs sym" src="../brand/logos/vector/ncl-symbol-white.svg" alt="">
+  <div class="web ltr">www.dulights.com</div>
+  <div class="tel ltr">+964 783 577 6393</div>
+  <div class="addr ltr">Baghdad – Al-Mansour – Al-Dawoodi, Iraq</div>
+  <div class="ar-addr ar">بغداد – المنصور – الداوودي</div>
+  <div class="g hem"><span class="t" style="left:6mm;top:10mm">TOP HEM / SEAL ZONE – NO ARTWORK (30 mm)</span></div>
+  <div class="g handle"><span class="t" style="left:0;right:0;top:12mm;text-align:center">DIE-CUT HANDLE 150 x 32 mm</span></div>
+  <div class="g safe"></div>
+</div>
+<script src="shared/common.js"></script>
+<script>if(/[?&]guides=1/.test(location.search))document.body.classList.add('guides')</script>
+</body></html>

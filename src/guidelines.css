@@ -1,0 +1,52 @@
+/* New City Light – Brand Guidelines (A4 landscape, 297 x 210 mm) */
+.gp{background:#fff;color:var(--navy)}
+.gp.dark{background:var(--navy);color:#fff}
+.gp.orange{background:var(--orange);color:var(--navy)}
+.gp .pad{position:absolute;left:18mm;right:18mm;top:15mm}
+.eyebrow{font-size:6.6pt;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--orange-text)}
+.dark .eyebrow{color:var(--orange)}
+.gp h1{font-weight:800;font-size:23pt;line-height:1.08;margin-top:2.2mm;letter-spacing:-.012em}
+.gp h2{font-weight:700;font-size:11pt;line-height:1.25;margin-bottom:1.6mm}
+.gp h3{font-weight:700;font-size:7.4pt;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.4mm;color:var(--navy)}
+.lead{font-size:9.2pt;line-height:1.68;color:#3b4a56;max-width:160mm;margin-top:3.4mm;font-weight:400}
+.dark .lead{color:#c9d1d8}
+.gp p{font-size:8.2pt;line-height:1.62;color:#3b4a56;margin-bottom:2mm}
+.dark p{color:#c9d1d8}
+.gp small,.cap{font-size:6.3pt;line-height:1.5;color:var(--muted);letter-spacing:.02em}
+.dark .cap{color:#9fb0bd}
+.gp .body{position:absolute;left:18mm;right:18mm;top:47mm;bottom:17mm}
+.gp .foot{position:absolute;left:18mm;right:18mm;bottom:7.5mm;display:flex;justify-content:space-between;align-items:center;font-size:5.8pt;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.dark .foot{color:#8ea0ae}
+.gp .foot b{color:var(--orange-text);font-weight:800;letter-spacing:.1em}
+.dark .foot b{color:var(--orange)}
+.gp ul{list-style:none;margin:0;padding:0}
+.gp li{font-size:8.1pt;line-height:1.55;color:#3b4a56;padding-left:4mm;position:relative;margin-bottom:1.3mm}
+.gp li::before{content:"";position:absolute;left:0;top:1.7mm;width:1.7mm;height:.55mm;background:var(--orange)}
+.dark li{color:#c9d1d8}
+.grid{display:grid;column-gap:7mm;row-gap:6mm}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+.card{background:var(--tint);padding:4mm 4.5mm;border-left:1mm solid var(--orange)}
+.tile{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.tile img{max-width:78%;max-height:62%}
+.tile .lbl{position:absolute;left:3mm;bottom:2.4mm;font-size:5.6pt;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.bd{border:.25mm solid var(--line)}
+.shadowbox{box-shadow:0 1.2mm 4mm rgba(15,30,42,.18)}
+.divider{position:absolute;inset:0;background-color:var(--navy)}
+.big-num{position:absolute;left:18mm;top:58mm;font-weight:800;font-size:120pt;line-height:1;color:var(--orange);letter-spacing:-.04em}
+.div-title{position:absolute;left:18mm;top:128mm;font-weight:800;font-size:32pt;line-height:1.08;color:#fff;letter-spacing:-.01em;max-width:200mm}
+.div-sub{position:absolute;left:18mm;top:160mm;font-size:9.5pt;line-height:1.6;color:#aebbc6;max-width:140mm}
+.sw{position:relative;color:#fff}
+.sw .nm{font-weight:800;font-size:12pt}
+.sw .hx{font-weight:600;font-size:8pt;letter-spacing:.08em}
+.sw .vl{font-size:6.6pt;line-height:1.6;opacity:.92;margin-top:1.4mm}
+.pill{display:inline-block;font-size:5.8pt;font-weight:700;letter-spacing:.12em;padding:.7mm 2mm;border-radius:10mm;text-transform:uppercase}
+.ok{background:#d9efe0;color:#14532d}.warn{background:#fdebc8;color:#7a4a05}.bad{background:#f8d7d3;color:#8a1c12}
+table.t{width:100%;border-collapse:collapse;font-size:8.2pt}
+table.t th{text-align:left;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:1.6mm 2mm;border-bottom:.35mm solid var(--navy)}
+table.t td{padding:2.6mm 2.4mm;border-bottom:.25mm solid var(--line);vertical-align:middle;color:#2c3b47}
+.x{position:absolute;right:2.6mm;top:2.6mm;width:5.4mm;height:5.4mm;border-radius:50%;background:#C0392B;color:#fff;font:800 8pt/5.4mm Montserrat;text-align:center}
+.chk{position:absolute;right:2.6mm;top:2.6mm;width:5.4mm;height:5.4mm;border-radius:50%;background:#1f8a4c;color:#fff;font:800 8pt/5.4mm Montserrat;text-align:center}
+.frame{background:#fff;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover}
+.mock{background:var(--tint)}
+.mock img{width:100%;height:100%;object-fit:contain}

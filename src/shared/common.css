@@ -1,0 +1,53 @@
+/* New City Light – shared stationery styles */
+@font-face{font-family:'Montserrat';font-weight:300;src:url(../../brand/fonts/Montserrat-latin-300.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:400;src:url(../../brand/fonts/Montserrat-latin-400.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:500;src:url(../../brand/fonts/Montserrat-latin-500.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:600;src:url(../../brand/fonts/Montserrat-latin-600.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:700;src:url(../../brand/fonts/Montserrat-latin-700.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:800;src:url(../../brand/fonts/Montserrat-latin-800.woff2) format('woff2')}
+@font-face{font-family:'NCL Arabic';font-weight:400;src:url(../../brand/fonts/NotoKufiArabic-arabic-400.woff2) format('woff2')}
+@font-face{font-family:'NCL Arabic';font-weight:600;src:url(../../brand/fonts/NotoKufiArabic-arabic-600.woff2) format('woff2')}
+@font-face{font-family:'NCL Arabic';font-weight:700;src:url(../../brand/fonts/NotoKufiArabic-arabic-700.woff2) format('woff2')}
+@font-face{font-family:'NCL Arabic';font-weight:800;src:url(../../brand/fonts/NotoKufiArabic-arabic-800.woff2) format('woff2')}
+
+:root{
+  --orange:#F36B24; --navy:#0F1E2A; --slate:#303E4A; --offwhite:#F5F5F4;
+  --ink:#0F1E2A; --muted:#5E6B76; --line:#D9DDE0; --tint:#F1F2F3;
+  --orange-d:#D85A17; --orange-text:#BD470B;
+  --b:0mm; --slug:0mm;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:'Montserrat','NCL Arabic',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ar{font-family:'NCL Arabic','Montserrat',sans-serif;direction:rtl;unicode-bidi:isolate}
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+/* page machinery (see common.js) */
+.page{position:relative;overflow:hidden;page-break-after:always;break-after:page;background:#fff}
+.page:last-child{page-break-after:auto;break-after:auto}
+.bleedbox{position:absolute;overflow:hidden}
+.sheet{position:absolute;overflow:visible}
+.fullbleed{position:absolute;left:calc(-1*var(--b));top:calc(-1*var(--b));right:calc(-1*var(--b));bottom:calc(-1*var(--b))}
+.abs{position:absolute}
+.marks{position:absolute;left:0;top:0;pointer-events:none}
+img{display:block}
+
+/* ---------- shared stationery components ---------- */
+.pat-navy{background-image:url(../../brand/patterns/ncl-pattern-on-navy.svg);background-size:11mm 9mm}
+.pat-slate{background-image:url(../../brand/patterns/ncl-pattern-on-slate.svg);background-size:11mm 9mm}
+.pat-orange{background-image:url(../../brand/patterns/ncl-pattern-on-orange.svg);background-size:11mm 9mm}
+.pat-white{background-image:url(../../brand/patterns/ncl-pattern-on-white.svg);background-size:11mm 9mm}
+
+.footer-band{position:absolute;left:calc(-1*var(--b));right:calc(-1*var(--b));bottom:calc(-1*var(--b));
+  height:calc(26mm + var(--b));background-color:var(--navy);color:var(--offwhite)}
+.footer-band::before{content:"";position:absolute;left:0;right:0;top:0;height:1.3mm;background:var(--orange)}
+.footer-grid{position:absolute;left:calc(20mm + var(--b));right:calc(20mm + var(--b));top:6.4mm;display:grid;
+  grid-template-columns:1.25fr 1fr 1.15fr;column-gap:7mm;font-size:6.8pt;line-height:1.55;font-weight:400;letter-spacing:.01em}
+.footer-grid .lab{font-size:5.2pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:.9mm;display:flex;justify-content:space-between}
+.footer-grid .lab .ar{font-size:6pt;letter-spacing:0;font-weight:700}
+.footer-grid b{font-weight:600}
+.footer-grid .arl{font-size:6.6pt;line-height:1.7;font-weight:400;opacity:.92}
+.footer-grid .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.hdr-rule{position:absolute;left:20mm;right:20mm;height:.25mm;background:var(--line)}
+.hdr-rule::before{content:"";position:absolute;left:0;top:-.15mm;width:16mm;height:.55mm;background:var(--orange)}
+.pat-orange-dark{background-image:url(../../brand/patterns/ncl-pattern-on-orange-dark.svg);background-size:22mm 18mm}

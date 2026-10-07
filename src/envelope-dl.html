@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>NCL Envelope DL</title>
+<link rel="stylesheet" href="shared/common.css"><style>
+.front{background:#fff}
+.front .logo{left:11mm;top:9.5mm;width:50mm}
+.front .logo-ar{right:11mm;top:9.5mm;height:8.38mm}
+.front .strip{position:absolute;left:calc(-1*var(--b));right:calc(-1*var(--b));bottom:calc(-1*var(--b));height:calc(6.45mm + var(--b));background-color:var(--navy)}
+.front .strip::before{content:"";position:absolute;left:0;right:0;top:0;height:1.48mm;background:var(--orange)}
+.front .contact{position:absolute;left:11mm;bottom:8.95mm;font-size:7.0pt;font-weight:500;letter-spacing:.04em;color:var(--muted)}
+.front .contact span{color:var(--orange);font-weight:700;margin:0 1.6mm}
+.back{background:var(--slate)}
+.back .flap{position:absolute;left:calc(-1*var(--b));top:calc(-1*var(--b));right:calc(-1*var(--b));height:calc(55.0mm + var(--b));
+  background-color:#374858;clip-path:polygon(0 0,100% 0,100% 60.00%,50% 100%,0 60.00%)}
+.back .flap-edge{position:absolute;left:calc(-1*var(--b));top:calc(-1*var(--b));right:calc(-1*var(--b));height:calc(55.0mm + var(--b))}
+.back .logo{left:50%;transform:translateX(-50%);top:74.2mm;width:62mm}
+</style></head><body>
+<div class="sheet front" data-w="220" data-h="110">
+  <img class="abs logo" src="../brand/logos/png/ncl-horizontal-full-colour.png" alt="">
+  <img class="abs logo-ar" src="../brand/logos/png/ncl-arabic-navy.png" alt="">
+  <div class="contact ltr">www.dulights.com<span>·</span>+964 783 577 6393<span>·</span>Baghdad, Iraq</div>
+  <div class="strip pat-navy"></div>
+</div>
+<div class="sheet back" data-w="220" data-h="110">
+  <div class="flap pat-slate"></div>
+  <svg class="flap-edge" viewBox="0 0 100 100" preserveAspectRatio="none" style="pointer-events:none" width="100%" height="100%"></svg>
+  <img class="abs logo" src="../brand/logos/png/ncl-horizontal-on-dark.png" alt="">
+</div>
+<script src="shared/common.js"></script></body></html>
