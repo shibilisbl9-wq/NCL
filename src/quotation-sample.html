@@ -1,42 +1,49 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><title>NCL Quotation A4</title>
 <link rel="stylesheet" href="shared/common.css"><style>
-.logo-en{left:20mm;top:14mm;width:64mm} .logo-ar{right:20mm;top:14mm;height:10.7mm} .hdr-rule{top:32mm}
-.title{position:absolute;left:20mm;right:20mm;top:37mm;display:flex;justify-content:space-between;align-items:baseline}
+.logo-en{left:20mm;top:14mm;width:64mm} .logo-ar{right:20mm;top:16.25mm;height:6.2mm} .hdr-rule{top:32mm}
+.title{position:absolute;left:20mm;right:20mm;top:36.5mm;display:flex;justify-content:space-between;align-items:baseline;line-height:1.2}
 .title .en{font-weight:800;font-size:19pt;letter-spacing:.2em;color:var(--navy)}
 .title .ar{font-weight:800;font-size:17pt;color:var(--orange)}
+.title-rule{position:absolute;left:20mm;right:20mm;top:48mm;height:.7mm;background:var(--navy)}
+.title-rule::before{content:"";position:absolute;left:0;top:0;width:34mm;height:.7mm;background:var(--orange)}
 .grid{position:absolute;left:20mm;right:20mm;display:grid;column-gap:5mm}
-.meta{top:48.5mm;grid-template-columns:repeat(3,1fr);row-gap:2mm}
-.fld .lab{display:flex;justify-content:space-between;font-size:5.6pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-text)}
-.fld .lab .ar{letter-spacing:0;font-size:6.2pt}
+.meta{top:54mm;grid-template-columns:repeat(3,1fr);row-gap:2mm}
+.lab,.fld .lab{display:flex;justify-content:space-between;align-items:baseline;font-size:5.6pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-text);line-height:1.5}
+.fld .lab .ar,.lab .ar{letter-spacing:0;font-size:6.2pt;line-height:1.5}
 .fld .val{height:6.2mm;border-bottom:.25mm solid var(--line);font-size:8.4pt;font-weight:500;padding-top:1.3mm;white-space:nowrap}
-.parties{top:76mm;grid-template-columns:1fr 1fr;column-gap:6mm}
+.parties{top:80mm;grid-template-columns:1fr 1fr;column-gap:6mm}
 .box{background:var(--tint);border-left:1mm solid var(--orange);padding:2.4mm 3.5mm 1.5mm;height:24.5mm}
-.box h4{display:flex;justify-content:space-between;font-size:5.8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:800;margin-bottom:.8mm}
+.box h4{display:flex;justify-content:space-between;align-items:baseline;font-size:5.8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:800;margin-bottom:.8mm;line-height:1.5}
 .box h4 .ar{letter-spacing:0;font-size:6.6pt}
 .box .fld .val{height:5.2mm;padding-top:.8mm;border-bottom-color:#cfd4d8;font-size:8pt}
-table.items{position:absolute;left:20mm;right:20mm;top:104mm;width:170mm;border-collapse:collapse;font-size:8pt}
-.items thead th{background:var(--navy);color:#fff;font-weight:600;font-size:6.4pt;letter-spacing:.08em;text-transform:uppercase;padding:2mm 2mm;text-align:left;line-height:1.25}
-.items thead th .ar{display:block;letter-spacing:0;font-size:6.4pt;text-transform:none;font-weight:600;opacity:.9}
+table.items{position:absolute;left:20mm;right:20mm;top:108mm;width:170mm;border-collapse:collapse;font-size:8pt}
+.items thead th{background:var(--navy);color:#fff;font-weight:600;font-size:6.4pt;letter-spacing:.08em;text-transform:uppercase;padding:2mm 2mm;text-align:left;line-height:1.25;border-top:.9mm solid var(--orange)}
+.items thead th .ar{display:block;letter-spacing:0;font-size:6.4pt;text-transform:none;font-weight:600;opacity:.9;margin-top:.3mm}
 .items thead th.c{text-align:center} .items thead th.r{text-align:right}
-.items thead th:first-child{border-top:.9mm solid var(--orange)} .items thead th{border-top:.9mm solid var(--orange)}
-.items td{height:8.4mm;border-bottom:.25mm solid var(--line);padding:0 2mm;vertical-align:middle;line-height:1.3;font-size:7.8pt}
+.items td{height:8mm;border-bottom:.25mm solid var(--line);padding:0 2mm;vertical-align:middle;line-height:1.3;font-size:7.8pt}
 .items td.c{text-align:center;color:var(--muted)} .items td.r{text-align:right;font-variant-numeric:tabular-nums}
 .items tbody tr:nth-child(even) td{background:#fafafa}
-.bottom{position:absolute;left:20mm;right:20mm;top:176mm;display:grid;grid-template-columns:1fr 70mm;column-gap:8mm}
-.terms h4,.sig h4{font-size:5.8pt;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--navy);margin-bottom:1.4mm;display:flex;justify-content:space-between}
-.terms h4 .ar,.sig h4 .ar{letter-spacing:0;font-size:6.6pt}
-.terms ol{padding-left:3.6mm;font-size:6.6pt;line-height:1.55;color:#33434f}
-.terms li{margin-bottom:.7mm}
-.tot{width:70mm;font-size:8pt}
-.tot .row{display:flex;justify-content:space-between;padding:1.5mm 2mm;border-bottom:.25mm solid var(--line);font-weight:500}
-.tot .row span:first-child{font-size:6.4pt;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
-.tot .row .ar{font-size:6.4pt;color:var(--muted);margin-left:2mm}
-.tot .row b{font-variant-numeric:tabular-nums;font-weight:600}
-.tot .grand{background:var(--navy);color:#fff;border:0;border-left:1mm solid var(--orange);padding:2.4mm 2.4mm}
-.tot .grand span:first-child{color:#fff;font-weight:700} .tot .grand b{color:var(--orange);font-size:10pt;font-weight:800}
-.sigrow{position:absolute;left:20mm;right:20mm;top:219mm;display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:8mm}
-.sig .line{height:25mm;border:.25mm solid var(--line);border-radius:.8mm;background:#fff}
-.sig .cap{font-size:6pt;color:var(--muted);margin-top:1mm}
+/* approvals (left) | totals (right) */
+.mid{position:absolute;left:20mm;right:20mm;top:178mm;display:grid;grid-template-columns:1fr 68mm;column-gap:9mm}
+.appr h4,.tc h4{display:flex;justify-content:space-between;align-items:baseline;font-size:5.8pt;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--navy);margin-bottom:1.4mm;line-height:1.5}
+.appr h4 .ar,.tc h4 .ar{letter-spacing:0;font-size:6.6pt}
+.appr .three{display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:4mm}
+.appr .line{height:19mm;border:.25mm solid var(--line);border-radius:.8mm;background:#fff}
+.appr .cap{font-size:5.6pt;color:var(--muted);margin-top:1mm}
+.tot{font-size:8pt}
+.tot .row{display:flex;align-items:baseline;padding:1.7mm 2mm;border-bottom:.25mm solid var(--line);font-weight:500}
+.tot .row .en{flex:1;font-size:6.2pt;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.tot .row .ar{font-size:6.4pt;color:var(--muted);margin:0 3mm;font-weight:600}
+.tot .row b{min-width:20mm;text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.tot .grand{background:var(--navy);color:#fff;border:0;border-left:1mm solid var(--orange);padding:2.6mm 2.4mm}
+.tot .grand .en,.tot .grand .ar{color:#fff;font-weight:700} .tot .grand b{color:var(--orange);font-size:10pt;font-weight:800}
+/* terms: EN left, AR right */
+.tc{position:absolute;left:20mm;right:20mm;top:214mm;display:grid;grid-template-columns:1fr 1fr;column-gap:10mm;border-top:.25mm solid var(--line);padding-top:3mm}
+.tc h4{justify-content:flex-start}
+.tc .ar-col{direction:rtl;text-align:right}
+.tc ol{padding-left:3.6mm;font-size:7pt;line-height:1.6;color:#33434f}
+.tc .ar-col ol{list-style-type:arabic-indic;padding-left:0;padding-right:4mm;font-family:'NCL Arabic','Montserrat',sans-serif;font-size:7.2pt;line-height:1.85}
+.tc li{margin-bottom:.9mm}
 .sample-tag{position:absolute;right:20mm;top:6mm;font-size:5.6pt;font-weight:700;letter-spacing:.16em;color:var(--orange)}
 .smp{font-size:8.2pt}
 </style></head><body>
@@ -46,6 +53,7 @@ table.items{position:absolute;left:20mm;right:20mm;top:104mm;width:170mm;border-
   <img class="abs logo-ar" src="../brand/logos/png/ncl-arabic-navy.png" alt="">
   <div class="hdr-rule"></div>
   <div class="title"><div class="en">QUOTATION</div><div class="ar">عرض سعر</div></div>
+  <div class="title-rule"></div>
 
   <div class="grid meta">
     <div class="fld"><div class="lab"><span>Quotation No.</span><span class="ar">رقم العرض</span></div><div class="val">NCL-Q-2026-0147</div></div>
@@ -76,32 +84,50 @@ table.items{position:absolute;left:20mm;right:20mm;top:104mm;width:170mm;border-
     <th class="r" style="width:27mm">Total<span class="ar">المجموع</span></th></tr></thead>
     <tbody><tr><td class="c">1</td><td>LED linear profile system, 20 W/m, 3000 K, anodised black, 2 m</td><td class="c">m</td><td class="r">120</td><td class="r">18.50</td><td class="r">2,220.00</td></tr><tr><td class="c">2</td><td>Recessed COB downlight, 12 W, 3000 K, IP44</td><td class="c">pcs</td><td class="r">80</td><td class="r">14.00</td><td class="r">1,120.00</td></tr><tr><td class="c">3</td><td>Outdoor pathway bollard, 10 W, IP65, graphite</td><td class="c">pcs</td><td class="r">24</td><td class="r">96.00</td><td class="r">2,304.00</td></tr><tr><td class="c">4</td><td>Constant-voltage LED driver, 100 W, 24 V</td><td class="c">pcs</td><td class="r">18</td><td class="r">38.50</td><td class="r">693.00</td></tr><tr><td class="c">5</td><td>Installation supervision and commissioning</td><td class="c">lot</td><td class="r">1</td><td class="r">850.00</td><td class="r">850.00</td></tr><tr><td class="c"></td><td></td><td class="c"></td><td class="r"></td><td class="r"></td><td class="r"></td></tr><tr><td class="c"></td><td></td><td class="c"></td><td class="r"></td><td class="r"></td><td class="r"></td></tr></tbody></table>
 
-  <div class="bottom">
-    <div class="terms"><h4><span>Terms &amp; conditions</span><span class="ar">الشروط والأحكام</span></h4>
+  <div class="mid">
+    <div class="appr"><h4><span>Approvals</span><span class="ar">الاعتمادات</span></h4>
+      <div class="three">
+        <div><div class="lab"><span>Prepared by</span><span class="ar">أعدّه</span></div><div class="line"></div><div class="cap">Name · signature · date</div></div>
+        <div><div class="lab"><span>Approved by</span><span class="ar">اعتمده</span></div><div class="line"></div><div class="cap">Name · signature · date</div></div>
+        <div><div class="lab"><span>Stamp</span><span class="ar">الختم</span></div><div class="line"></div><div class="cap">&nbsp;</div></div>
+      </div></div>
+    <div class="tot">
+      <div class="row"><span class="en">Subtotal</span><span class="ar">المجموع الفرعي</span><b>7,187.00</b></div>
+      <div class="row"><span class="en">Discount</span><span class="ar">الخصم</span><b>359.35</b></div>
+      <div class="row"><span class="en">Tax / VAT</span><span class="ar">الضريبة</span><b>0.00</b></div>
+      <div class="row grand"><span class="en">Grand total</span><span class="ar">الإجمالي</span><b>6,827.65</b></div>
+    </div>
+  </div>
+
+  <div class="tc">
+    <div><h4><span>Terms &amp; conditions</span></h4>
       <ol><li>Prices are valid for the period stated above and exclude any taxes or duties not shown.</li>
       <li>Delivery: ____ weeks from order confirmation and receipt of advance payment.</li>
       <li>Warranty: as per the manufacturer's terms for each product supplied.</li>
       <li>Any change to the scope or quantities will be quoted separately.</li></ol></div>
-    <div class="tot">
-      <div class="row"><span>Subtotal<span class="ar">المجموع الفرعي</span></span><b>7,187.00</b></div>
-      <div class="row"><span>Discount<span class="ar">الخصم</span></span><b>359.35</b></div>
-      <div class="row"><span>Tax / VAT<span class="ar">الضريبة</span></span><b>0.00</b></div>
-      <div class="row grand"><span>Grand total<span class="ar" style="color:#fff">الإجمالي</span></span><b>6,827.65</b></div>
-    </div>
+    <div class="ar-col"><h4 class="ar"><span>الشروط والأحكام</span></h4>
+      <ol><li>الأسعار سارية للمدة المذكورة أعلاه ولا تشمل أي ضرائب أو رسوم غير مبيّنة.</li>
+      <li>التسليم: ____ أسبوعاً من تأكيد الطلب واستلام الدفعة المقدّمة.</li>
+      <li>الضمان: وفق شروط الشركة المصنّعة لكل منتج يتم توريده.</li>
+      <li>أي تغيير في نطاق العمل أو الكميات يُسعَّر بشكل منفصل.</li></ol></div>
   </div>
 
-  <div class="sigrow">
-    <div class="sig"><h4><span>Prepared by</span><span class="ar">أعدّه</span></h4><div class="line"></div><div class="cap">Name · signature · date</div></div>
-    <div class="sig"><h4><span>Approved by</span><span class="ar">اعتمده</span></h4><div class="line"></div><div class="cap">Name · signature · date</div></div>
-    <div class="sig"><h4><span>Company stamp</span><span class="ar">ختم الشركة</span></h4><div class="line"></div><div class="cap">&nbsp;</div></div>
+  <div class="footer-band pat-navy"><div class="ft">
+  <div class="ft-id">
+    <img class="ft-en" src="../brand/logos/vector/ncl-wordmark-white.svg" alt="New City Light">
+    <img class="ft-ar" src="../brand/logos/png/ncl-arabic-white.png" alt="نيو سيتي لايت">
+    <div class="ft-tag"><span>Lighting the Way</span><i></i><i></i><i></i></div>
   </div>
-
-  <div class="footer-band pat-navy">
-    <div class="footer-grid">
-      <div><div class="lab"><span>Address</span><span class="ar">العنوان</span></div><div><b>New City Light</b><br>Baghdad – Al-Mansour – Al-Dawoodi, Iraq</div><div class="arl ar">بغداد – المنصور – الداوودي</div></div>
-      <div><div class="lab"><span>Phone</span><span class="ar">الهاتف</span></div><div class="num ltr">+964 783 577 6393<br>+964 786 555 3648<br>+964 780 517 7717</div></div>
-      <div><div class="lab"><span>Email · Web</span><span class="ar">البريد · الموقع</span></div><div class="ltr">admin@dulights.com<br>www.dulights.com</div>
-      <div class="ltr" style="margin-top:1.4mm;font-size:5.6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);font-weight:600">Lighting the Way</div></div>
+  <div class="ft-contact">
+    <div class="ft-main">
+      <div class="ft-row ltr"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+964 987 654 3210</span></div>
+      <div class="ft-row ltr"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>admin@newcitylights.ir</span></div>
+      <div class="ft-row ltr"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>www.newcitylights.ir</span></div>
+    </div>
+    <div class="ft-addr">
+      <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div><div class="ltr">Baghdad, Iraq</div><div class="ar">بغداد، العراق</div></div>
     </div>
   </div>
+</div></div>
 </div><script src="shared/common.js"></script></body></html>

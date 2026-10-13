@@ -26,7 +26,7 @@ def img(path, h_px):
     im = im.resize((w * 3, h_px * 3), Image.LANCZOS); b = io.BytesIO(); im.save(b, 'PNG'); b.seek(0)
     x = XImg(b); x.width, x.height = w, h_px; return x
 ws.add_image(img('brand/logos/png/ncl-horizontal-full-colour.png', 40), 'A1')
-ar = img('brand/logos/png/ncl-arabic-navy.png', 40); ws.add_image(ar, 'E1')
+ar = img('brand/logos/png/ncl-arabic-navy.png', 22); ar.anchor = None; ws.add_image(ar, 'E1')
 for r in (1, 2): ws.row_dimensions[r].height = 22
 ws.row_dimensions[3].height = 6
 for col in 'ABCDEF': ws[f'{col}3'].fill = PatternFill('solid', fgColor=ORANGE)
@@ -90,16 +90,8 @@ put(f'F{g}', f'=F{t}-F{t+2}+F{t+4}', f(size=12, bold=True, color=ORANGE), NAVY, 
 ws[f'F{g}'].number_format = '#,##0.00'; ws.row_dimensions[g].height = 26
 for col in 'CDE': ws[f'{col}{g}'].fill = PatternFill('solid', fgColor=NAVY)
 
-tr = g + 2
-put(f'A{tr}', 'TERMS & CONDITIONS  /  الشروط والأحكام', f(size=8, bold=True, color=NAVY))
-terms = ['1. Prices are valid for the period stated above and exclude any taxes or duties not shown.',
-         '2. Delivery: ____ weeks from order confirmation and receipt of advance payment.',
-         "3. Warranty: as per the manufacturer's terms for each product supplied.",
-         '4. Any change to the scope or quantities will be quoted separately.']
-for i, tx in enumerate(terms):
-    put(f'A{tr+1+i}', tx, f(size=8, color='33434F')); ws.merge_cells(f'A{tr+1+i}:F{tr+1+i}')
-s = tr + 6
-for col, (en, ar_) in zip('ACE', [('PREPARED BY', 'أعدّه'), ('APPROVED BY', 'اعتمده'), ('COMPANY STAMP', 'ختم الشركة')]):
+s = g + 2
+for col, (en, ar_) in zip('ACE', [('PREPARED BY', 'أعدّه'), ('APPROVED BY', 'اعتمده'), ('STAMP', 'الختم')]):
     put(f'{col}{s}', f'{en}  /  {ar_}', lab)
 for col, span in (('A', 'B'), ('C', 'D'), ('E', 'F')):
     ws.merge_cells(f'{col}{s+1}:{span}{s+3}')
@@ -108,16 +100,29 @@ for col, span in (('A', 'B'), ('C', 'D'), ('E', 'F')):
             ws[f'{cc}{rr}'].border = Border(left=thin if cc == col else None, right=thin if cc == span else None,
                                             top=thin if rr == s + 1 else None, bottom=thin if rr == s + 3 else None)
 for rr in range(s + 1, s + 4): ws.row_dimensions[rr].height = 18
-
-b = s + 5
+tr = s + 5
+put(f'A{tr}', 'TERMS & CONDITIONS', f(size=8, bold=True, color=NAVY)); ws.merge_cells(f'A{tr}:C{tr}')
+put(f'D{tr}', 'الشروط والأحكام', Font(name='Noto Kufi Arabic', size=8, bold=True, color=NAVY), al=Alignment(horizontal='right', readingOrder=2)); ws.merge_cells(f'D{tr}:F{tr}')
+terms = ['1. Prices are valid for the period stated above and exclude any taxes or duties not shown.',
+         '2. Delivery: ____ weeks from order confirmation and receipt of advance payment.',
+         "3. Warranty: as per the manufacturer's terms for each product supplied.",
+         '4. Any change to the scope or quantities will be quoted separately.']
+terms_ar = ['١. الأسعار سارية للمدة المذكورة أعلاه ولا تشمل أي ضرائب أو رسوم غير مبيّنة.','٢. التسليم: ____ أسبوعاً من تأكيد الطلب واستلام الدفعة المقدّمة.','٣. الضمان: وفق شروط الشركة المصنّعة لكل منتج يتم توريده.','٤. أي تغيير في نطاق العمل أو الكميات يُسعَّر بشكل منفصل.']
+for i, (tx, ta) in enumerate(zip(terms, terms_ar)):
+    r = tr + 1 + i
+    put(f'A{r}', tx, f(size=8, color='33434F'), al=Alignment(wrap_text=True, vertical='top')); ws.merge_cells(f'A{r}:C{r}')
+    put(f'D{r}', ta, Font(name='Noto Kufi Arabic', size=8, color='33434F'), al=Alignment(wrap_text=True, vertical='top', horizontal='right', readingOrder=2)); ws.merge_cells(f'D{r}:F{r}')
+    ws.row_dimensions[r].height = 30
+s = tr + 4
+b = s + 2
 band = f(size=8, color='FFFFFF'); bandb = f(size=8, bold=True, color='FFFFFF')
 for rr in range(b, b + 4):
     for col in 'ABCDEF': ws[f'{col}{rr}'].fill = PatternFill('solid', fgColor=NAVY)
 for col in 'ABCDEF': ws[f'{col}{b}'].fill = PatternFill('solid', fgColor=ORANGE)
 ws.row_dimensions[b].height = 4
-put(f'A{b+1}', 'New City Light  ·  Baghdad – Al-Mansour – Al-Dawoodi, Iraq  ·  بغداد – المنصور – الداوودي', bandb); ws.merge_cells(f'A{b+1}:F{b+1}')
-put(f'A{b+2}', '+964 783 577 6393  ·  +964 786 555 3648  ·  +964 780 517 7717', band); ws.merge_cells(f'A{b+2}:F{b+2}')
-put(f'A{b+3}', 'admin@dulights.com  ·  www.dulights.com  ·  LIGHTING THE WAY', band); ws.merge_cells(f'A{b+3}:F{b+3}')
+put(f'A{b+1}', 'New City Light  ·  نيو سيتي لايت  ·  Baghdad, Iraq  ·  بغداد، العراق', bandb); ws.merge_cells(f'A{b+1}:F{b+1}')
+put(f'A{b+2}', 'T  +964 987 654 3210  ·  E  admin@newcitylights.ir  ·  W  www.newcitylights.ir', band); ws.merge_cells(f'A{b+2}:F{b+2}')
+put(f'A{b+3}', 'LIGHTING THE WAY  ·  إنارة الطريق', band); ws.merge_cells(f'A{b+3}:F{b+3}')
 for rr in (b + 1, b + 2, b + 3): ws.row_dimensions[rr].height = 17
 
 ws.print_area = f'A1:F{b+3}'

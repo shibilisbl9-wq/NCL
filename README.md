@@ -23,11 +23,11 @@ Supporting: `brand/` (logo PNG/SVG kit, petal pattern tiles, fonts, reference im
 These are real limits, not footnotes:
 
 1. **Nothing has been test-printed.** Colours are RGB (`#F36B24` orange, `#0F1E2A` navy, `#F5F5F4` off-white, `#303E4A` slate). The CMYK values in the book are straight conversions – approve a printed swatch first. No Pantone matches were assigned.
-2. **Website conflict.** The brochure says `www.dulights.com` / `admin@dulights.com` (used on everything here). The business-card mockup says `www.NewCityLight.com`. Tell me which one is right and I'll rebuild.
+2. **Contact details.** Website `www.newcitylights.ir`; phone is the placeholder `+964 987 654 3210`; email `admin@newcitylights.ir` is my assumption (same mailbox name, new domain) - confirm all three. Address is `Baghdad, Iraq / بغداد، العراق` everywhere.
 3. **Defect in the supplied logo files.** In the full-colour and single-colour PNGs the ® ring is a hairline sitting to the *right* of the "R" instead of around it. The on-dark file is correct. My logo kit rebuilds the ® from the correct file – please fix the master artwork too.
-4. **Arabic spelling.** The Arabic logo reads «انارة» (no hamza); the brochure body text writes «إنارة». I used the hamza form in running text and the logo artwork as supplied.
+4. **Arabic name** is now the sound of the name, «نيو سيتي لايت», set in Noto Kufi Arabic ExtraBold (`build/make_arabic_wordmark.py`). The supplied Arabic logo (a translation) is no longer used. Arabic tagline «إنارة الطريق» is my wording - confirm.
 5. **"30+ years" vs 1998.** The brochure claims 30+ years of experience but its timeline starts in 1998 (28 years). I did not print either claim.
-6. **Pattern is a reconstruction** of the one visible on the card/envelope mockups (the original file wasn't in the pack). Drop the original into `brand/patterns/` if you have it.
+6. **Pattern** is rebuilt as upright rounded triangles on a staggered grid, matching the card/envelope mockups; still a reconstruction, not the original file.
 7. **Fonts.** Montserrat (Latin) and Noto Kufi Arabic (Arabic) are free and are used everywhere. The brochure uses *GE SS Two* (Arabic, commercial) and *Nasalization* (logo/headlines, free for personal use only) – not bundled; check licences. The stationery doesn't need them (the logo is artwork).
 8. **Contrast.** White-on-orange and orange-on-white are only 3.0:1 – fine for the logo and large type, not for small text. Small orange labels use a darker `#BD470B` (5.2:1). Details on page 14 of the book.
 9. **Office printers can't print to the page edge**, so the letterhead's full-bleed footer band only works on pre-printed stock. The Word template is for files you send as PDF.

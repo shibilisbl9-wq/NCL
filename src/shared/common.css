@@ -33,21 +33,32 @@ body{font-family:'Montserrat','NCL Arabic',sans-serif;color:var(--ink);-webkit-p
 img{display:block}
 
 /* ---------- shared stationery components ---------- */
-.pat-navy{background-image:url(../../brand/patterns/ncl-pattern-on-navy.svg);background-size:11mm 9mm}
-.pat-slate{background-image:url(../../brand/patterns/ncl-pattern-on-slate.svg);background-size:11mm 9mm}
-.pat-orange{background-image:url(../../brand/patterns/ncl-pattern-on-orange.svg);background-size:11mm 9mm}
-.pat-white{background-image:url(../../brand/patterns/ncl-pattern-on-white.svg);background-size:11mm 9mm}
+.pat-navy{background-image:url(../../brand/patterns/ncl-pattern-on-navy.svg);background-size:6.4mm 6.4mm}
+.pat-slate{background-image:url(../../brand/patterns/ncl-pattern-on-slate.svg);background-size:6.4mm 6.4mm}
+.pat-orange{background-image:url(../../brand/patterns/ncl-pattern-on-orange.svg);background-size:6.4mm 6.4mm}
+.pat-white{background-image:url(../../brand/patterns/ncl-pattern-on-white.svg);background-size:6.4mm 6.4mm}
 
 .footer-band{position:absolute;left:calc(-1*var(--b));right:calc(-1*var(--b));bottom:calc(-1*var(--b));
   height:calc(26mm + var(--b));background-color:var(--navy);color:var(--offwhite)}
 .footer-band::before{content:"";position:absolute;left:0;right:0;top:0;height:1.3mm;background:var(--orange)}
-.footer-grid{position:absolute;left:calc(20mm + var(--b));right:calc(20mm + var(--b));top:6.4mm;display:grid;
-  grid-template-columns:1.25fr 1fr 1.15fr;column-gap:7mm;font-size:6.8pt;line-height:1.55;font-weight:400;letter-spacing:.01em}
-.footer-grid .lab{font-size:5.2pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:.9mm;display:flex;justify-content:space-between}
-.footer-grid .lab .ar{font-size:6pt;letter-spacing:0;font-weight:700}
-.footer-grid b{font-weight:600}
-.footer-grid .arl{font-size:6.6pt;line-height:1.7;font-weight:400;opacity:.92}
-.footer-grid .num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .hdr-rule{position:absolute;left:20mm;right:20mm;height:.25mm;background:var(--line)}
 .hdr-rule::before{content:"";position:absolute;left:0;top:-.15mm;width:16mm;height:.55mm;background:var(--orange)}
-.pat-orange-dark{background-image:url(../../brand/patterns/ncl-pattern-on-orange-dark.svg);background-size:22mm 18mm}
+.pat-orange-dark{background-image:url(../../brand/patterns/ncl-pattern-on-orange-dark.svg);background-size:9.6mm 9.6mm}
+
+/* ---------- stationery footer (see build/parts.py) ---------- */
+.ft{position:absolute;left:calc(20mm + var(--b));right:calc(20mm + var(--b));top:1.3mm;bottom:var(--b);display:grid;
+  grid-template-columns:48mm 1fr;column-gap:8mm;align-items:center;color:var(--offwhite)}
+.ft-id{display:flex;flex-direction:column;align-items:flex-start;gap:1.9mm;padding-right:8mm;border-right:.25mm solid rgba(255,255,255,.22);justify-content:center}
+.ft-en{width:40mm;height:auto}
+.ft-ar{width:40mm;height:auto}
+.ft-tag{display:flex;align-items:center;gap:1.1mm;width:40mm;font-size:5pt;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--orange);line-height:1}
+.ft-tag span{white-space:nowrap}
+.ft-tag i{display:block;width:1.5mm;height:1.3mm;background:var(--orange);clip-path:polygon(50% 0,100% 100%,0 100%);margin-left:.9mm}
+.ft-tag i+i{margin-left:0}
+.ft-contact{display:grid;grid-template-columns:2fr 1fr;column-gap:6mm;align-items:center}
+.ft-main{display:flex;flex-direction:column;gap:1.9mm}
+.ft-row,.ft-addr{display:flex;align-items:center;gap:2.2mm;font-size:7pt;font-weight:500;letter-spacing:.015em;line-height:1.2}
+.ft-addr{align-items:flex-start;gap:2.2mm}
+.ft-addr>div{display:flex;flex-direction:column;gap:1.3mm}
+.ft-addr .ar{font-size:7pt;font-weight:600;line-height:1.2}
+.ft .ic{width:3.5mm;height:3.5mm;flex:none;color:var(--orange)}

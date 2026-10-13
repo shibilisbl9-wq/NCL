@@ -7,10 +7,11 @@
 .front .en-line{position:absolute;left:0;right:0;top:344mm;text-align:center;font-weight:600;font-size:5.2mm;letter-spacing:.42em;text-transform:uppercase;color:#fff;opacity:.95}
 .front .rule{position:absolute;left:50%;top:306mm;width:26mm;height:1.1mm;background:#fff;transform:translateX(-50%)}
 .back .sym{left:50%;top:165mm;width:62mm;transform:translateX(-50%)}
-.back .web{position:absolute;left:0;right:0;top:352mm;text-align:center;font-size:7mm;font-weight:600;letter-spacing:.12em;color:#fff}
-.back .tel{position:absolute;left:0;right:0;top:364mm;text-align:center;font-size:5.4mm;font-weight:500;letter-spacing:.1em;color:#fff;opacity:.95}
-.back .addr{position:absolute;left:0;right:0;top:375mm;text-align:center;font-size:4.4mm;font-weight:400;letter-spacing:.06em;color:#fff;opacity:.9}
-.back .ar-addr{position:absolute;left:0;right:0;top:383mm;text-align:center;font-size:4.4mm;font-weight:600;color:#fff;opacity:.95}
+.back .contact{position:absolute;left:0;right:0;top:353mm;display:flex;justify-content:center;align-items:center;gap:15mm;font-size:5.6mm;font-weight:600;letter-spacing:.06em;color:#fff}
+.back .contact .it{display:flex;align-items:center;gap:3mm}
+.back .contact .ic{width:6.2mm;height:6.2mm;flex:none}
+.back .addr{position:absolute;left:0;right:0;top:368mm;text-align:center;font-size:5.6mm;font-weight:600;letter-spacing:.06em;color:#fff;line-height:1.5}
+.back .addr .ar{font-size:5.6mm;letter-spacing:0;display:block;margin-top:1mm}
 /* production guides */
 .g{display:none} body.guides .g{display:block}
 .g.handle{position:absolute;left:50%;top:48mm;width:150mm;height:32mm;transform:translateX(-50%);border:.4mm dashed #0F1E2A;border-radius:16mm;background:rgba(255,255,255,.25)}
@@ -22,7 +23,7 @@
   <div class="bgpat pat-orange-dark"></div>
   <img class="abs logo" src="../brand/logos/vector/ncl-stacked-mono-white.svg" alt="">
   <div class="rule"></div>
-  <div class="ar-line ar">مدينة جديدة. إنارة جديدة. منظور جديد.</div>
+  <div class="ar-line ar">إنارة الطريق</div>
   <div class="g hem"><span class="t" style="left:6mm;top:10mm">TOP HEM / SEAL ZONE – NO ARTWORK (30 mm)</span></div>
   <div class="g handle"><span class="t" style="left:0;right:0;top:12mm;text-align:center">DIE-CUT HANDLE 150 x 32 mm</span></div>
   <div class="g safe"></div>
@@ -30,10 +31,8 @@
 <div class="sheet bag back" data-w="350" data-h="450">
   <div class="bgpat pat-orange-dark"></div>
   <img class="abs sym" src="../brand/logos/vector/ncl-symbol-white.svg" alt="">
-  <div class="web ltr">www.dulights.com</div>
-  <div class="tel ltr">+964 783 577 6393</div>
-  <div class="addr ltr">Baghdad – Al-Mansour – Al-Dawoodi, Iraq</div>
-  <div class="ar-addr ar">بغداد – المنصور – الداوودي</div>
+  <div class="contact ltr"><div class="it"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>www.newcitylights.ir</span></div><div class="it"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+964 987 654 3210</span></div></div>
+  <div class="addr"><div class="ltr">Baghdad, Iraq</div><div class="ar">بغداد، العراق</div></div>
   <div class="g hem"><span class="t" style="left:6mm;top:10mm">TOP HEM / SEAL ZONE – NO ARTWORK (30 mm)</span></div>
   <div class="g handle"><span class="t" style="left:0;right:0;top:12mm;text-align:center">DIE-CUT HANDLE 150 x 32 mm</span></div>
   <div class="g safe"></div>
