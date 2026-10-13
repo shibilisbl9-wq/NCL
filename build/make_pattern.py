@@ -5,20 +5,23 @@ OUT = 'brand/patterns'; os.makedirs(OUT, exist_ok=True)
 T = 12.0                 # tile size (units)
 BASE, HGT, R = 4.8, 5.3, 0.75   # triangle base, height, corner radius
 
-def rounded_tri(cx, top):
-    """Apex-up isosceles triangle with rounded corners (quadratic corners)."""
-    pts = [(cx, top), (cx + BASE / 2, top + HGT), (cx - BASE / 2, top + HGT)]
-    d = ''
-    n = len(pts)
+def rounded_poly(pts, r):
+    n = len(pts); d = ''
     for i in range(n):
         p0, p1, p2 = pts[i - 1], pts[i], pts[(i + 1) % n]
-        def toward(a, b, r):
+        def toward(a, b, rr):
             dx, dy = b[0] - a[0], b[1] - a[1]; L = (dx * dx + dy * dy) ** .5
-            return (a[0] + dx / L * r, a[1] + dy / L * r)
-        r = R * (1.9 if i == 0 else 1.0)          # slightly softer apex
-        a = toward(p1, p0, r); b = toward(p1, p2, r)
-        d += ('M' if i == 0 else 'L') + f'{a[0]:.3f} {a[1]:.3f} Q {p1[0]:.3f} {p1[1]:.3f} {b[0]:.3f} {b[1]:.3f} '
+            return (a[0] + dx / L * min(rr, L / 2), a[1] + dy / L * min(rr, L / 2))
+        a_ = toward(p1, p0, r); b_ = toward(p1, p2, r)
+        d += ('M' if i == 0 else 'L') + f'{a_[0]:.3f} {a_[1]:.3f} Q {p1[0]:.3f} {p1[1]:.3f} {b_[0]:.3f} {b_[1]:.3f} '
     return d + 'Z'
+
+def rounded_tri(cx, top):
+    """Upright arrow motif: triangular head on a short stem, apex up (as on the approved envelope/card mockups)."""
+    hw, sw, hh, th = 2.8, 1.45, 3.3, 5.5          # head half-width, stem half-width, head height, total height
+    pts = [(cx, top), (cx + hw, top + hh), (cx + sw, top + hh), (cx + sw, top + th),
+           (cx - sw, top + th), (cx - sw, top + hh), (cx - hw, top + hh)]
+    return rounded_poly(pts, 0.35)
 
 def tile(fill, opacity):
     ps = ''
