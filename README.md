@@ -15,7 +15,7 @@ Text and layout are HTML/CSS source, but see "The sources are behind the deliver
 | `05-Quotation` | Navy **cover** (front/back, print + blank PDF) and bilingual A4 form (blank print PDF, blank PDF, sample PDF) + **Excel template with formulas** |
 | `06-Stamp` | Round Ø43 mm + rectangular 80×26 mm, one-colour, **text outlined**: SVG + PDF, black and navy; `new.pdf` (Illustrator export, see below) |
 | `07-Plastic-Bag` | 350×450 mm, **orange** and **clear** film versions: artwork PDF + version with die-cut/safe-area guides |
-| `08-Mockups` | `NCL-Mockups-v1.0.pdf`: 10 photographic mockup slides (16:9) |
+| `08-Mockups` | `NCL-Mockups-v1.0.pdf`: 11 mockup slides (16:9), including slide 05, email signature |
 
 ## Email signature: which file to use
 
@@ -42,6 +42,8 @@ So `src/` and `build/` cannot reproduce the current PDFs, and `build/build_all.p
 because running it would replace them with older designs. Only these two scripts are safe:
 
 - `python3 build/make_signature_editable.py`: editable email-signature files, built from the approved JPG
+- `python3 build/make_mockup_signature.py`: adds the email signature slide to the delivered mockups PDF (`build/base/`),
+  renumbers the slides to /11, adds it to the cover list and corrects the brand book slide to 37 pages
 - `python3 build/patch_guidelines.py`: takes the delivered 33-page book (`build/base/`) and re-renders the contents page, p23 and p29,
   adds four mockup pages (p30–33) and renumbers the pages after them
 
@@ -60,7 +62,7 @@ These are real limits, not footnotes:
 7. **Fonts.** Montserrat (Latin) and Noto Kufi Arabic (Arabic) are free and are used everywhere. The brochure uses *GE SS Two* (Arabic, commercial) and *Nasalization* (logo/headlines, free for personal use only) – not bundled; check licences. The stationery doesn't need them (the logo is artwork).
 8. **Contrast.** White-on-orange and orange-on-white are only 3.0:1 – fine for the logo and large type, not for small text. Small orange labels use a darker `#BD470B` (5.2:1). Details on page 13 of the book.
 9. **Office printers can't print to the page edge**, so the letterhead's full-bleed footer band only works on pre-printed stock. The Word template is for files you send as PDF.
-10. **Mockups are slides, not artwork.** The brand-book mockup slide still says "33 pages" (the book now has 37), and the quotation-cover slide lists a "sample" PDF that doesn't exist (only sample previews do). They're flat images, so I couldn't fix them.
+10. **Mockups are flat images.** The email signature slide (05) is a screen mockup (a generic mail window and a phone), not a photo render like the others. The page numbers, the cover list and the brand book's page count were retouched into the images. The quotation cover slide still lists a "sample" PDF that doesn't exist; only sample previews do.
 11. **Placeholders I wrote, not NCL:** quotation terms, the four personality words, the working English translation of the Arabic statement, bag size (350×450 mm), min logo sizes (40 mm / 160 px). Stamp wording has no registration/licence number – check what the authorities require.
 12. **Envelope and bag die-lines** belong to your manufacturer; artwork is at finished size.
 
