@@ -15,6 +15,7 @@ All text and layout are live source (HTML/CSS) so any change is a rebuild, not a
 | `05-Quotation` | A4 bilingual form (blank print PDF, blank PDF, sample-filled PDF) + **Excel template with formulas** |
 | `06-Stamp` | Round Ø42 mm + rectangular 69×33 mm, one-colour, **text outlined**: SVG + PDF, black and navy |
 | `07-Plastic-Bag` | 350×450 mm front/back artwork + version with die-cut/safe-area guides |
+| `08-Symbol-Concepts` | 11-page review deck: navy app icon, 6 colour-only routes, 6 shape concepts, recommendation. **Proposals, not approved artwork.** |
 
 Supporting: `brand/` (logo PNG/SVG kit, petal pattern tiles, fonts, reference images), `src/` (HTML sources), `build/` (scripts; `python3 build/build_all.py`).
 
@@ -34,5 +35,7 @@ These are real limits, not footnotes:
 10. **Email signature images must be hosted** at a public https URL for Gmail/Outlook.com; edit the `src` in the HTML. Montserrat falls back to Segoe UI/Arial in mail clients.
 11. **Placeholders I wrote, not NCL:** quotation terms, the four personality words, the working English translation of the Arabic statement, bag size (350×450 mm), min logo sizes (40 mm / 160 px). Stamp wording has no registration/licence number – check what the authorities require.
 12. **Envelope and bag die-lines** belong to your manufacturer; artwork is at finished size.
+
+13. **Symbol likeness.** Alone, the orange radiating symbol (especially white-on-orange) reads like other tech/AI "spark" marks. The navy app icon (`brand/logos/png/ncl-app-icon-navy.png`) is now primary; the old orange tile `ncl-app-icon.png` is kept but retired. Colour-only routes and shape concepts are in `brand/concepts/` and `08-Symbol-Concepts` – all generated from the master geometry, so a designer should refine whichever is picked. Colour does not change one-colour uses (stamp, embossing). Avoid light/off-white icon tiles: cream behind orange brings the likeness back.
 
 Source data used: company brochure (contacts, services, milestones, partners), approved mockups (slate colour, pattern, direction).

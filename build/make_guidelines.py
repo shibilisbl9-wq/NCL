@@ -127,7 +127,7 @@ add('02 Logo', head('02 · Logo', 'Lockups', 'Four approved forms. Choose by spa
  {lk(f'<div class="tile bd"><img src="{L}ncl-horizontal-full-colour.png" style="max-width:88%" alt=""></div>','Horizontal · EN','Default for stationery, documents, web headers and signage.')}
  {lk(f'<div class="tile bd"><img src="{L}ncl-arabic-navy.png" style="max-width:80%" alt=""></div>','Arabic lockup','Pairs with the English logo on bilingual stationery, or leads Arabic-only material. Sits on the right.')}
  {lk(f'<div class="tile bd"><img src="{V}ncl-stacked-on-light.svg" style="max-width:62%;max-height:84%" alt=""></div>','Stacked','For square and portrait spaces: bags, packaging, covers, stamps. Vector artwork.')}
- {lk(f'<div class="tile bd" style="background:var(--tint)"><img src="{L}ncl-app-icon.png" style="max-width:none;max-height:none;height:78%" alt=""></div>','Symbol / app icon','When the name is already present or space is tight: avatars, favicons, patterns, embossing.')}
+ {lk(f'<div class="tile bd" style="background:var(--tint)"><img src="{L}ncl-app-icon-navy.png" style="max-width:none;max-height:none;height:78%" alt=""></div>','Symbol / app icon','When the name is already present or space is tight: avatars, favicons, patterns, embossing.')}
 </div>'''), pid='logo2')
 
 add('02 Logo', head('02 · Logo', 'Clear space &amp; minimum size', 'Keep a margin equal to <b>x</b>, the height of the capital letters in the wordmark, clear on all sides. Below the minimum widths, switch to the symbol alone.') + body(f'''
@@ -325,15 +325,15 @@ add('04 Graphic language', head('04 · Graphic language', 'Imagery', 'Night, arc
  <div class="card" style="border-left-color:#C0392B"><h3>Don’t</h3><ul><li>Flat daylight stock photography or cold, clinical white light.</li><li>Cluttered frames where the logo has to fight the picture.</li><li>Heavy filters, clip-art, or lens-flare effects.</li><li>Placing the logo directly on bright, busy areas; use a navy overlay first.</li></ul></div>
 </div>'''), pid='gl2')
 
-add('04 Graphic language', head('04 · Graphic language', 'App icon &amp; avatars', 'The symbol on an orange rounded square is the digital face of the brand. Use it wherever a small square or circle is needed.') + body(f'''
+add('04 Graphic language', head('04 · Graphic language', 'App icon &amp; avatars', 'Orange symbol on a navy rounded square is the primary icon. Navy is the colour that separates NCL from other orange “spark” marks, so the white-on-orange tile is retired for icons and avatars.') + body(f'''
 <div class="grid" style="grid-template-columns:1fr 1.2fr;column-gap:10mm;height:100%">
  <div class="grid g2" style="row-gap:5mm;grid-template-rows:1fr 1fr">
-  <div class="tile bd" style="background:var(--tint)"><img src="{L}ncl-app-icon.png" style="width:44mm;max-width:none;max-height:none" alt=""><div class="lbl" style="color:#5E6B76">App icon · 1024+ px</div></div>
+  <div class="tile bd" style="background:var(--tint)"><img src="{L}ncl-app-icon-navy.png" style="width:44mm;max-width:none;max-height:none" alt=""><div class="lbl" style="color:#5E6B76">App icon · primary · navy</div></div>
   <div class="tile bd" style="background:var(--tint)"><div style="width:36mm;height:36mm;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center"><img src="{V}ncl-symbol-orange.svg" style="width:20mm;max-width:none;max-height:none" alt=""></div><div class="lbl" style="color:#5E6B76">Avatar · circle</div></div>
-  <div class="tile bd" style="background:var(--tint)"><div style="display:flex;align-items:flex-end;gap:5mm"><img src="{L}ncl-app-icon.png" style="width:16mm;max-width:none;max-height:none;border-radius:0" alt=""><img src="{L}ncl-app-icon.png" style="width:9mm;max-width:none;max-height:none" alt=""><img src="{L}ncl-app-icon.png" style="width:5mm;max-width:none;max-height:none" alt=""></div><div class="lbl" style="color:#5E6B76">Favicon · 64 / 32 / 16</div></div>
-  <div class="tile bd" style="background:#fff"><div style="width:36mm;height:36mm;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center"><img src="{V}ncl-symbol-white.svg" style="width:20mm;max-width:none;max-height:none" alt=""></div><div class="lbl" style="color:#5E6B76">Avatar · orange</div></div>
+  <div class="tile bd" style="background:var(--tint)"><div style="display:flex;align-items:flex-end;gap:5mm"><img src="{L}ncl-app-icon-navy.png" style="width:16mm;max-width:none;max-height:none;border-radius:0" alt=""><img src="{L}ncl-app-icon-navy.png" style="width:9mm;max-width:none;max-height:none" alt=""><img src="{L}ncl-app-icon-navy.png" style="width:5mm;max-width:none;max-height:none" alt=""></div><div class="lbl" style="color:#5E6B76">Favicon · 64 / 32 / 16</div></div>
+  <div class="tile bd" style="background:#fff"><div style="width:36mm;height:36mm;background:#fff;border:.5mm solid var(--line,#d9dee2);border-radius:50%;display:flex;align-items:center;justify-content:center"><img src="{V}ncl-symbol-orange.svg" style="width:20mm;max-width:none;max-height:none" alt=""></div><div class="lbl" style="color:#5E6B76">Avatar · light (secondary)</div></div>
  </div>
- <div class="frame" style="position:relative"><img src="{R}mock-phone-icon.jpg" alt=""><div class="cap" style="position:absolute;left:3mm;bottom:2mm;color:#fff">Existing mockup: icon on the home screen</div></div>
+ <div class="frame" style="position:relative"><img src="{R}mock-phone-icon.jpg" alt=""><div class="cap" style="position:absolute;left:3mm;bottom:2mm;color:#fff">Existing mockup (orange tile, now retired): update it with the navy icon</div></div>
 </div>'''), pid='gl3')
 
 # ------------------------------------------------------------------ 05 STATIONERY
@@ -455,6 +455,7 @@ add('Reference', head('Reference', 'Company data &amp; open items', 'Everything 
    <li><b>Fonts.</b> GE SS Two and Nasalization are commercial or personal-use only; check licences. Montserrat and Noto Kufi are free.</li>
    <li><b>Colours.</b> CMYK values are starting points. Approve a printed swatch (and Pantone match if you use spot colour).</li>
    <li><b>Pattern.</b> Rebuilt from the mockups. Replace with the original if one exists.</li>
+   <li><b>Symbol likeness.</b> Alone, the symbol can read like other orange “spark” marks used by tech brands. Navy icon adopted; six alternative symbol concepts are in 08-Symbol-Concepts for NCL to review.</li>
    <li><b>Quotation terms &amp; stamp wording.</b> Placeholders. Legal and registration wording needs NCL’s sign-off.</li>
   </ul>
  </div>
