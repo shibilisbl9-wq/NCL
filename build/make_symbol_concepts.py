@@ -72,6 +72,41 @@ COLOURWAYS = {  # name, vertical, horizontal, artwork background, icon tile
 def colourway(v, h):
     return svg(petals(fill=v, clip='v') + petals(fill=h, clip='h'), clipdef('v', VERT) + clipdef('h', HORZ))
 
+
+# ---- geometric direction (from reference boards): petals cut from a closed shape by straight gaps.
+# Gaps on the axes run to the centre (between pairs); gaps on the diagonals stop in a round U (inside a pair),
+# which keeps NCL's structure of eight petals joined in four pairs.
+def geo(n=8, outer=('circle', 40), r_in=13, gap=(1.6, 0.06), u=22, split=None, rot=0, fill=ORANGE, mid=None):
+    """gap = (half-width at the centre, growth per unit radius) of the cut inside a pair; cuts widen outward so petals read as rays.
+    split = the same for the cuts between pairs (defaults to gap); wider splits make the four pairs read clearly."""
+    mid = mid or 'g' + re.sub(r'\W', '', f'{n}{outer}{r_in}{gap}{u}{split}')
+    kind, size = outer
+    split = split or gap
+    shape = lambda f: (f'<circle r="{size}" fill="{f}"/>' if kind == 'circle' else
+                       f'<rect x="{-size}" y="{-size}" width="{2*size}" height="{2*size}" rx="{size*0.24:.2f}" fill="{f}"/>')
+    def wedge(r0, g):
+        w = lambda r: g[0] + g[1] * r
+        return f'<polygon points="{r0},{-w(r0):.3f} 80,{-w(80):.3f} 80,{w(80):.3f} {r0},{w(r0):.3f}" fill="#000"/>'
+    cuts = f'<circle r="{r_in}" fill="#000"/>'
+    for k in range(n):
+        a = rot + k * 360 / n
+        # between pairs the cut runs to the centre; inside a pair it stops in a round U at radius u
+        cuts += f'<g transform="rotate({a:.3f})">' + (wedge(0, split) if k % 2 == 0 else wedge(u, gap) + f'<circle cx="{u}" r="{gap[0] + gap[1] * u:.3f}" fill="#000"/>') + '</g>'
+    m = f'<mask id="{mid}" maskUnits="userSpaceOnUse" x="-60" y="-60" width="120" height="120">{shape("#fff")}{cuts}</mask>'
+    return svg(f'<g mask="url(#{mid})">{shape(fill)}</g>', m)
+
+GEO = {
+    'h-aperture': ('Aperture', 'Eight petals cut from a disc, joined in four U-shaped pairs around a round opening. Reads as a lens or a downlight seen from below.',
+                   lambda fg, ac: geo(8, ('circle', 40), r_in=11, gap=(0.9, 0.08), u=19, split=(1.8, 0.15), fill=fg)),
+    'i-window':   ('Window', 'The same cut from a rounded square: a lit window, a city block. Squares sit well next to the wordmark and on an app tile.',
+                   lambda fg, ac: geo(8, ('square', 36), r_in=10.5, gap=(0.9, 0.075), u=18, split=(1.8, 0.14), fill=fg)),
+    'j-disc':     ('Solid disc', 'Heavier: narrow cuts and a small opening, so the mark reads as one solid badge. Strongest at 16 px; prints well as a stamp.',
+                   lambda fg, ac: geo(8, ('circle', 40), r_in=7, gap=(0.9, 0.05), u=14, fill=fg)),
+    'k-sunburst': ('Sunburst', 'Twelve petals in six pairs. More radiance, closer to a light source; still a closed circle, not a loose spark.',
+                   lambda fg, ac: geo(12, ('circle', 40), r_in=15, gap=(0.7, 0.06), u=22, split=(1.3, 0.12), fill=fg)),
+}
+CONCEPTS.update(GEO)
+
 def icon(sym_markup, bg, rounded=True, size=1024):
     """Rounded-square icon with the symbol at ~56% of the tile, as an SVG."""
     inner = re.search(r'<svg[^>]*viewBox="([^"]+)"[^>]*>(.*)</svg>', sym_markup, re.S)

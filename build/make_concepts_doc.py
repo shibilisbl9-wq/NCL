@@ -1,7 +1,7 @@
 """Symbol concepts review document (A4 landscape). Run make_symbol_concepts.py first."""
 import sys, pathlib; sys.path.insert(0, 'build')
 import render
-from make_symbol_concepts import CONCEPTS, COLOURWAYS
+from make_symbol_concepts import CONCEPTS, COLOURWAYS, GEO
 
 C = '../brand/concepts/'; L = '../brand/logos/png/'; V = '../brand/logos/vector/'
 # honest read of each concept: distance from generic orange 'spark' marks, and trade-offs
@@ -12,6 +12,10 @@ NOTES = {
     'd-pinwheel': ('High', 'Clear break. Reads as motion, energy, a turbine.', 'Can read as a fan, which is the wrong product for a lighting company. Thin bases at small sizes.'),
     'e-beams':    ('High', 'Bold, simple silhouette; survives a 16 px favicon.', 'Loses the radiance of the original. Can read as an hourglass or an “X”.'),
     'f-rising':   ('High', 'Most on-message: light rising over the city, “Lighting the Way”. Distinctive in the lockup.', 'Wide, not square, so weaker as an app icon. Sunrise marks are common in other sectors.'),
+    'h-aperture': ('High', 'A closed circle reads as a badge, not a loose spark. Looks like a lens or a downlight from below, so it means lighting. Keeps NCL’s eight petals in four pairs.', 'Segmented-circle marks are a current trend, so it needs refining to feel like NCL’s own. Can read as a camera shutter.'),
+    'i-window':   ('High', 'Square silhouette fills an app tile and matches the blocky wordmark. Suggests a lit window or a city block: the “City” in the name.', 'Less radiant than the circle. At 16 px it can read as a plain window or grid icon.'),
+    'j-disc':     ('High', 'The most solid version: clearest at 16 px, prints cleanly as a stamp or embossing.', 'Heaviest and least like light. Can read as a pie, a fan or an air vent.'),
+    'k-sunburst': ('High', 'The most radiant of the closed marks: a light source seen head-on.', 'Twelve cuts fill in below 32 px. Sun marks are common in solar and energy, which is close to NCL’s market.'),
     'g-lens':     ('Medium', 'Encloses the mark so it becomes a badge, like a luminaire seen from below. Good for seals and signage.', 'The ring disappears at favicon size, where the likeness is worst.'),
 }
 pages = []
@@ -39,20 +43,23 @@ page(head('Why', 'The symbol on its own', 'Next to the wordmark the logo is clea
   <li><b>White-on-orange tile retired</b> for icons and avatars. It is the closest match to other spark marks.</li>
   <li>Use the <b>full lockup</b> wherever there is room. The likeness only appears when the symbol stands alone.</li></ul>
   <h3 style="margin-top:6mm">Still open</h3><ul>
-  <li>Should the symbol itself change? The next pages show six options, all built from the master geometry.</li>
+  <li>Should the symbol itself change? The next pages show six colour-only options, six shape changes from the master geometry and four geometric concepts.</li>
   <li>Before the ® is relied on, have a trademark attorney run a clearance search on whichever symbol is chosen.</li></ul></div>
 </div></div>''')
 
 # overview
-cells = ''
-for k, (name, _, _) in CONCEPTS.items():
-    cells += (f'<div style="display:flex;flex-direction:column;min-height:0"><div class="tile bd" style="background:#fff;height:44mm">'
-              f'<img src="{C}ncl-symbol-{k}-on-light.svg" style="width:34mm;height:34mm;max-width:none;max-height:none" alt=""></div>'
+def overview(keys, tile=44, sym=34):
+  cells = ''
+  for k in keys:
+    name = CONCEPTS[k][0]
+    cells += (f'<div style="display:flex;flex-direction:column;min-height:0"><div class="tile bd" style="background:#fff;height:{tile}mm">'
+              f'<img src="{C}ncl-symbol-{k}-on-light.svg" style="width:{sym}mm;height:{sym}mm;max-width:none;max-height:none" alt=""></div>'
               f'<div style="display:flex;align-items:flex-end;gap:2.5mm;margin-top:2.5mm"><img src="{C}ncl-icon-{k}-navy.svg" style="width:11mm" alt="">'
               f'<img src="{C}ncl-icon-{k}-navy.svg" style="width:5.6mm" alt=""><img src="{C}ncl-icon-{k}-navy.svg" style="width:2.8mm" alt="">'
               f'<div class="cap" style="margin-left:auto;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)">{name}</div></div></div>')
+  return f'<div class="body"><div class="grid" style="grid-template-columns:repeat(4,1fr);row-gap:7mm;column-gap:6mm">{cells}</div></div>'
 page(head('Overview', 'Seven symbols side by side', 'The master plus six alternatives. Each one is shown with its navy icon at 64, 32 and 16 px. Judge them at the smallest size first: that is where the problem is.') +
-     f'<div class="body"><div class="grid" style="grid-template-columns:repeat(4,1fr);row-gap:7mm;column-gap:6mm">{cells}</div></div>')
+     overview([k for k in CONCEPTS if k not in GEO]))
 
 # colour-only routes
 cw = ''
@@ -65,9 +72,15 @@ for k, (name, v, h, bg, _) in COLOURWAYS.items():
 page(head('Colour only', 'Same symbol, new colours', 'No change to the shape, so every existing file, the stamp and the pattern stay valid. Colour does most of the work on screens and in full-colour print. In one-colour uses (stamp, embossing) the shape is unchanged, so the likeness stays there.') +
      f'<div class="body"><div class="grid" style="grid-template-columns:repeat(3,1fr);row-gap:6mm;column-gap:8mm">{cw}</div></div>')
 
+BUILT_MASTER = 'Built from the master petal geometry with no redrawing. A designer should refine curves, weights and spacing before anything is final.'
+BUILT_GEO = 'New geometry: a circle or square cut by parametric gaps. A starting point, not artwork; a designer should set final proportions, gap widths and corner rounding.'
+
 # one page per concept
 for k, (name, desc, _) in CONCEPTS.items():
     if k == 'a-master': continue
+    if k == next(iter(GEO)):
+        page(head('Geometric direction', 'Cut from a closed shape', 'Built from the reference boards: petals cut out of a circle or rounded square by straight gaps, with a round U joining each pair and an open centre. A closed outline reads as a badge, not a loose spark: the furthest move from the current look. The references are other studios’ work; these use their principles, not their marks.') +
+             overview(list(GEO), tile=70, sym=50) + '<div class="abs" style="left:18mm;right:18mm;bottom:17mm;height:52mm;display:grid;grid-template-columns:repeat(4,1fr);column-gap:6mm">' + ''.join(f'<div class="tile" style="background:var(--navy)"><img src="{C}ncl-symbol-{k}-on-dark.svg" style="width:36mm;height:36mm;max-width:none;max-height:none" alt=""></div>' for k in GEO) + '</div>')
     dist, pro, con = NOTES[k]
     page(head(f'Concept {k[0].upper()}', name, desc) + f'''
 <div class="body"><div class="grid" style="grid-template-columns:1fr 1fr 1.05fr;column-gap:7mm;height:100%">
@@ -86,17 +99,17 @@ for k, (name, desc, _) in CONCEPTS.items():
   <h3>Distance from generic spark marks</h3><div style="font-weight:800;font-size:20pt;color:var(--orange-text);margin-bottom:5mm">{dist}</div>
   <div class="card" style="border-left-color:#1f8a4c;margin-bottom:4mm"><h3>For</h3><p style="margin:0">{pro}</p></div>
   <div class="card" style="border-left-color:#C0392B"><h3>Against</h3><p style="margin:0">{con}</p></div>
-  <p class="cap" style="margin-top:4mm">Built from the master petal geometry with no redrawing. A designer should refine curves, weights and spacing before anything is final.</p>
+  <p class="cap" style="margin-top:4mm">{BUILT_GEO if k in GEO else BUILT_MASTER}</p>
  </div>
 </div></div>''')
 
 # recommendation
-page(head('Recommendation', 'What we would do', 'Keep the navy icon (done). Then pick one of two routes, depending on how far NCL wants to move.') + f'''
+page(head('Recommendation', 'What we would do', 'Keep the navy icon (done). Then pick one of two routes, depending on how far NCL wants to move. The geometric direction is the stronger fix.') + f'''
 <div class="body"><div class="grid" style="grid-template-columns:1fr 1fr 1fr;column-gap:8mm;height:100%">
  <div><div class="tile bd" style="background:#fff;height:52mm"><img src="{C}ncl-symbol-c-two-tone-on-light.svg" style="width:38mm;height:38mm;max-width:none;max-height:none" alt=""></div>
   <h2 style="margin-top:4mm">Route 1 · Two-tone</h2><p>Lowest risk. Same symbol, recoloured. No reprint of one-colour items (stamp, bag). Business cards, signage and digital pick it up at the next print run.</p></div>
- <div><div class="tile bd" style="background:#fff;height:52mm"><img src="{C}ncl-symbol-f-rising-on-light.svg" style="width:44mm;max-width:none;max-height:none" alt=""></div>
-  <h2 style="margin-top:4mm">Route 2 · Rising light</h2><p>A real break, and the closest to “Lighting the Way”. Needs a square icon variant, new lockups and a full artwork update. Only worth it if NCL is still early in the rollout.</p></div>
+ <div><div class="tile bd" style="background:#fff;height:52mm"><div style="display:flex;gap:6mm"><img src="{C}ncl-symbol-h-aperture-on-light.svg" style="width:34mm;height:34mm;max-width:none;max-height:none" alt=""><img src="{C}ncl-symbol-i-window-on-light.svg" style="width:34mm;height:34mm;max-width:none;max-height:none" alt=""></div></div>
+  <h2 style="margin-top:4mm">Route 2 · Aperture or Window</h2><p>A real break that keeps NCL’s eight petals in four pairs. Aperture says lighting; Window says city and suits the app tile. Needs a designer’s pass, new lockups and a full artwork update, so it is only worth it if NCL is early in the rollout.</p></div>
  <div class="card"><h3>Before deciding</h3><ul>
   <li>Show the shortlist to a few customers at icon size and ask what they see.</li>
   <li>Have a designer refine the chosen option. These are built from the master geometry, not finished artwork.</li>

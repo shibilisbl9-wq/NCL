@@ -455,7 +455,7 @@ add('Reference', head('Reference', 'Company data &amp; open items', 'Everything 
    <li><b>Fonts.</b> GE SS Two and Nasalization are commercial or personal-use only; check licences. Montserrat and Noto Kufi are free.</li>
    <li><b>Colours.</b> CMYK values are starting points. Approve a printed swatch (and Pantone match if you use spot colour).</li>
    <li><b>Pattern.</b> Rebuilt from the mockups. Replace with the original if one exists.</li>
-   <li><b>Symbol likeness.</b> Alone, the symbol can read like other orange “spark” marks used by tech brands. Navy icon adopted; six alternative symbol concepts are in 08-Symbol-Concepts for NCL to review.</li>
+   <li><b>Symbol likeness.</b> Alone, the symbol can read like other orange “spark” marks used by tech brands. Navy icon adopted; colour options and symbol concepts (including a geometric direction) are in 08-Symbol-Concepts for NCL to review.</li>
    <li><b>Quotation terms &amp; stamp wording.</b> Placeholders. Legal and registration wording needs NCL’s sign-off.</li>
   </ul>
  </div>
